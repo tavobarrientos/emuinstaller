@@ -1,3 +1,3 @@
-# template
+# EmuInstaller
 
-This is a template for starting new 3DS libctru projects.
+With this little tool you can install your ROM-to-VirtualConsole games in your 3ds.
