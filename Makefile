@@ -33,7 +33,7 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source source/core source/utils source/emuinstaller
+SOURCES		:=	source source/core source/utils source/emuinstaller source/includes/cia
 DATA		:=	data
 INCLUDES	:=	include
 GRAPHICS	:=	gfx
