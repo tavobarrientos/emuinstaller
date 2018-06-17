@@ -16,7 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with make_cdn_cia.  If not, see <http://www.gnu.org/licenses/>.
 **/
-#include "lib.h"
+#include "../lib.h"
 #include "cia.h"
 #include <3ds.h>
 #define TRUE 1

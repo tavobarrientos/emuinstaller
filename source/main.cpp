@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
 	mkpath("/emuinstaller", 0777);
 	mkpath("/emuinstaller/tmp", 0777);
-
+	
 	// Main loop
 	while (aptMainLoop())
 	{
