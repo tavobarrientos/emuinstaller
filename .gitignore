@@ -54,3 +54,4 @@ Temporary Items
 *.bat
 
 /build
+/romfs

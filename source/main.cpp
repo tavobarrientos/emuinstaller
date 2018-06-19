@@ -4,6 +4,7 @@
 #include <3ds.h>
 
 #include "utils/files.h"
+#include "includes/cia/cia.h"
 
 int main(int argc, char* argv[])
 {
@@ -22,6 +23,15 @@ int main(int argc, char* argv[])
 
 		// Your code goes here
 		u32 kDown = hidKeysDown();
+
+		printf("Presiona A para instalar el CIA");
+
+		if(kDown & KEY_A)
+		{
+			printf("Instalando CIA");
+
+		}
+
 		if (kDown & KEY_START)
 			break; // break in order to return to hbmenu
 	}
