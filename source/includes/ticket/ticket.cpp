@@ -1,8 +1,20 @@
 #include "ticket.h"
 
+#include "../types.h"
+#include "../cia/cia.h"
+
 Result Ticket::ProcessCIA(std::string dir, std::string title)
 {
-    return -1;
+    FILE *tik = fopen((dir + "/ticket").c_str(), "rb");
+
+    if(!tik)
+    {
+        return -1;
+    }
+
+    TIK_CONTEXT tik_context = process_tik(tik);
+
+    return 1;
 }
 
 
