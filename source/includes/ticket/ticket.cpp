@@ -26,9 +26,10 @@ void Ticket::CreateTicket(std::string titleId, std::string encTitleKey, char* ti
 
 void Ticket::InstallTicket(std::string FullPath, std::string TitleId)
 {
+    Files files;
     Handle hTik;
     u32 writtenByte;
-    std::string curr = Files::GetFileContents(FullPath.c_str());
+    std::string curr = files.GetFileContents(FullPath.c_str()); //Files::GetFileContents(FullPath.c_str());
 
     char *nTitleId = parse_string(TitleId);
     u64 titleId = 10; // u8_to_u64

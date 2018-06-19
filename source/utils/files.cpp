@@ -26,5 +26,5 @@ int Files::mkpath(std::string folder, mode_t mode)
 
 std::string Files::GetFileContents(const char *filename)
 {
-    std::ifstream in(filename, std::ios::in | std::ios::binary);
+    return "";
 }
