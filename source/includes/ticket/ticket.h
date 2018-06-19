@@ -22,6 +22,9 @@ class Ticket {
         void CreateTicket(std::string titleId, std::string encTitleKey, char* titleVersion, std::string outputFullPath);
         void InstallTicket(std::string FullPath, std::string TitleId);
         Result DownloadTitle(std::string titleId, std::string encTitleKey, std::string titleName, std::string region);
+    private:
+        char* parse_string(const std::string &s);
+        char parse_hex(char c);
 };
 
 #endif

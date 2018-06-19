@@ -11,8 +11,8 @@ int main(int argc, char* argv[])
 	gfxInitDefault();
 	consoleInit(GFX_TOP, NULL);
 
-	mkpath("/emuinstaller", 0777);
-	mkpath("/emuinstaller/tmp", 0777);
+	// mkpath("/emuinstaller", 0777);
+	// mkpath("/emuinstaller/tmp", 0777);
 	
 	// Main loop
 	while (aptMainLoop())

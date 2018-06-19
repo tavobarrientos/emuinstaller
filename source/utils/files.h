@@ -13,6 +13,12 @@
 #include <stdint.h>
 #include <stddef.h>
 
-int mkpath(std::string folder, mode_t mode);
+using namespace std;
+
+class Files {
+    public:
+        int mkpath(std::string folder, mode_t mode);
+        std::string GetFileContents(const char *filename);
+};
 
 #endif

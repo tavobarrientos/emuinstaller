@@ -1,6 +1,6 @@
 #include "files.h"
 
-int mkpath(std::string folder, mode_t mode)
+int Files::mkpath(std::string folder, mode_t mode)
 {
     size_t pre=0, pos;
     std::string dir;
@@ -22,4 +22,9 @@ int mkpath(std::string folder, mode_t mode)
         }
     }
     return result;
+}
+
+std::string Files::GetFileContents(const char *filename)
+{
+    std::ifstream in(filename, std::ios::in | std::ios::binary);
 }
