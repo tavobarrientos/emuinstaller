@@ -2,6 +2,7 @@
 
 #include "../cia/cia.h"
 #include "../../utils/files.h"
+#include "../utils.h"
 
 Result Ticket::ProcessCIA(std::string dir, std::string title)
 {
@@ -31,7 +32,7 @@ void Ticket::InstallTicket(std::string FullPath, std::string TitleId)
     std::string curr = files.GetFileContents(FullPath.c_str()); //Files::GetFileContents(FullPath.c_str());
 
     char *nTitleId = parse_string(TitleId);
-    u64 titleId = 10; // u8_to_u64
+    u64 titleId = u8_to_u64((u8*)nTitleId, BIG_ENDIAN);
     free(nTitleId);
     AM_DeleteTicket(titleId);
 
