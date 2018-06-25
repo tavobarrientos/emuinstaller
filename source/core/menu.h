@@ -11,6 +11,13 @@
 #include <stdint.h>
 #include <stddef.h>
 
+#include "../includes/utils.h"
+
+typedef struct ConsoleMenu {
+	PrintConsole menuConsole;
+} ConsoleMenu;
+
+extern ConsoleMenu currentMenu;
 void init_menu(gfxScreen_t screen);
 
 #endif
