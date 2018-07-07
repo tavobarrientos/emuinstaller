@@ -1,5 +1,7 @@
 #include "files.h"
 
+#include<fstream>
+
 int Files::mkpath(std::string folder, mode_t mode)
 {
     size_t pre=0, pos;
@@ -26,5 +28,10 @@ int Files::mkpath(std::string folder, mode_t mode)
 
 std::string Files::GetFileContents(const char *filename)
 {
-    return "";
+  std::ifstream in(filename, std::ios::in | std::ios::binary);
+  if (in)
+  {
+    return(std::string((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>()));
+  }
+  throw(errno);
 }
