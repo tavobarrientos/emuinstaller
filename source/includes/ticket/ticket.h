@@ -13,7 +13,8 @@
 #include <stddef.h>
 
 #include "../types.h"
-
+#include "data.h"
+static const u16 top = 0x140;
 using namespace std;
 
 class Ticket {

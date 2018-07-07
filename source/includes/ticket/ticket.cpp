@@ -21,6 +21,31 @@ Result Ticket::ProcessCIA(std::string dir, std::string title)
 
 void Ticket::CreateTicket(std::string titleId, std::string encTitleKey, char* titleVersion, std::string outputFullPath)
 {
+    std::ofstream ofs;
+
+    ofs.open(outputFullPath, std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
+    ofs.write(tikTemp, TICKET_SIZE);
+    ofs.close();
+
+    ofs.open(outputFullPath, std::ofstream::out | std::ofstream::in | std::ofstream::binary);
+
+    //write version
+    ofs.seekp(top+0xA6, std::ios::beg);
+    ofs.write(titleVersion, 0x2);
+
+    //write title id
+    char* nTitleID = parse_string(titleId);
+    ofs.seekp(top+0x9C, std::ios::beg);
+    ofs.write(nTitleID, 0x8);
+    free(nTitleID);
+
+    //write key
+    char* nTitleKey = parse_string(encTitleKey);
+    ofs.seekp(top+0x7F, std::ios::beg);
+    ofs.write(nTitleKey, 0x10);
+    free(nTitleKey);
+
+    ofs.close();
 }
 
 
